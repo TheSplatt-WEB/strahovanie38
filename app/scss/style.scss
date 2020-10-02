@@ -70,6 +70,21 @@
         }
     }
 }
+.btn-top {
+    content: "";
+    position: fixed;
+    width: 31px;
+    height: 38px;
+    bottom: 40px;
+    right: 40px;
+    background-image: url(../images/btn-top.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 30px;
+    cursor: pointer;
+    z-index: 3;
+    opacity: .3;
+}
 .slider-top-wrapper{
     position: relative;
     .slick-arrow{
@@ -176,6 +191,9 @@
             &:hover{
                 background-color: $element;
             }
+            &:focus{
+                background-color: $element;
+            }
         }
     }
 }
@@ -231,6 +249,14 @@
     margin-bottom: 15px;
     position: relative;
     &:hover{
+        .big-item__img{
+            bottom: 60px;
+        }
+        .big-item__btn{
+            bottom: 0;
+        }
+    }
+    &:focus{
         .big-item__img{
             bottom: 60px;
         }
@@ -300,6 +326,14 @@
     margin-left: 15px;
     padding-bottom: 15px;
     &:hover{
+        img{
+            transform: scale(1.2);
+        }
+        .small-item__img::after{
+            transform: scale(1);
+        }
+    }
+    &:focus{
         img{
             transform: scale(1.2);
         }
@@ -460,12 +494,21 @@
     &__social{
         a{
             margin: 10px;
+            transition: all .3s;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:focus{
+                transform: scale(1.1);
+            }
         }
     }
     &__phone{
         font-size: 13px;
         font-family: 'MyFont', sans-serif;
         margin-bottom: 10px;
+        transition: all .3s;
+            
     }
     &__btn{
         font-family: 'MyFont', sans-serif;
@@ -477,6 +520,9 @@
             border-radius: 30px;
             transition: all .3s;
             &:hover{
+                background-color: $element;
+            }
+            &:focus{
                 background-color: $element;
             }
         }
