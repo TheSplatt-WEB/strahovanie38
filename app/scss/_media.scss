@@ -13,6 +13,9 @@
         transform: translate(-50%, -50%);
         text-align: center;
     }
+    .slider-top-item__btn{
+        margin: 0 auto;
+    }
 }
 @media(max-width: 850px){
     .title{
@@ -32,33 +35,35 @@
         text-align: center;
         li{
             position: absolute;
-            transition: all .2s;
             left: -100vw;
-            right: 100vw;
-            top: 45px;
+            right: 150vw;
             display: block;
             border-bottom: 1px solid transparent;
             border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
             border-image-slice: 1;
-            &:nth-child(2){
-                top: 92px;
-                transition: all .4s;
-            }
-            &:nth-child(3){
-                top: 139px;
-                transition: all .6s;
-            }
-            &:nth-child(4){
-                top: 186px;
-                transition: all .8s;
-            }
-            &:nth-child(5){
-                top: 233px;
-                transition: all 1s;
-            }
             & + li{
                 margin-left: 0;
             }
+        }
+        .list-row-1{
+            top: 45px;
+            transition: all .2s;
+        }
+        .list-row-2{
+            top: 92px;
+            transition: all .4s;
+        }
+        .list-row-3{
+            top: 139px;
+            transition: all .6s;
+        }
+        .list-row-4{
+            top: 186px;
+            transition: all .8s;
+        }
+        .list-row-5{
+            top: 233px;
+            transition: all 1s;
         }
         a{
             display: block;
@@ -111,7 +116,7 @@
     .footer-inner{
         flex-wrap: wrap;
     }
-    .footer-item{
+    .footer-item__info{
         order: 2;
     }
     .footer-item__social, .footer-item__contacts{
@@ -170,6 +175,9 @@
 @media(max-width: 450px){
     .slider-top-item{
         background-position: 28% center;
+    }
+    .product-image__inner{
+        background-position: 24% center;
     }
     .title{
         font-size: 20px;

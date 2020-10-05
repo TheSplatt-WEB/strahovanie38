@@ -1,7 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'global';
-
+//start index
 .header{
     background-color: rgba($dark, .9);
     width: 100%;
@@ -86,7 +86,6 @@
     opacity: .3;
 }
 .slider-top-wrapper{
-    position: relative;
     .slick-arrow{
         position: absolute;
         z-index: 1;
@@ -142,12 +141,15 @@
         }
     }
 }
+.slider-top-inner{
+    position: relative;
+}
 .slider-top-item{
+    display: block;
     min-height: 65vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 10% center;
-    position: relative;
     &.left{
         background-position: 70% center;
     }
@@ -178,23 +180,23 @@
         }
     }
     &__btn{
-        a{
             font-family: 'MyFont', sans-serif;
             text-transform: uppercase;
-            padding: 15px 20px;
+            padding: 10px 15px;
+            text-align: center;
             border-radius: 30px;
             border: 1px solid $element;
             transition: all .3s;
             outline: none;
             font-size: 13px;
             font-weight: 700;
+            max-width: 170px;
             &:hover{
                 background-color: $element;
             }
             &:focus{
                 background-color: $element;
             }
-        }
     }
 }
 .work{
@@ -203,6 +205,7 @@
         border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
         border-image-slice: 1;
         padding-bottom: 40px;
+        text-align: center;
     }
     &__row{
         display: flex;
@@ -229,6 +232,10 @@
             margin-right: 5px;
         }
     }
+}
+.work__btn{
+    margin: 0 auto;
+    margin-top: 10px;
 }
 .services-inner{
     display: flex;
@@ -460,9 +467,6 @@
     }
 }
 .about-partners{
-    border-bottom: 1px solid transparent;
-    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-    border-image-slice: 1;
     &__title{
         text-transform: none;
         font-size: 18px;
@@ -480,54 +484,303 @@
     }
 }
 .footer-inner{
-    margin: 30px 0;
+    padding: 30px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
+    border-image-slice: 1;
 }
-.footer-item, .footer-item__social, .footer-item__contacts{
+.footer-item__info, .footer-item__social, .footer-item__contacts{
     max-width: 300px;
     width: 100%;
     font-size: 14px;
     text-align: center;
     margin: 5px;
-    &__social{
-        a{
-            margin: 10px;
-            transition: all .3s;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:focus{
-                transform: scale(1.1);
-            }
-        }
-    }
+}
+.footer-item{
     &__phone{
         font-size: 13px;
         font-family: 'MyFont', sans-serif;
         margin-bottom: 10px;
-        transition: all .3s;
-            
+        transition: all .3s; 
     }
     &__btn{
-        font-family: 'MyFont', sans-serif;
-        font-size: 12px;
+        margin: 0 auto;
         margin-bottom: 5px;
-        a{
-            border: 1px solid $element;
-            padding: 10px 15px;
-            border-radius: 30px;
-            transition: all .3s;
-            &:hover{
-                background-color: $element;
-            }
-            &:focus{
-                background-color: $element;
-            }
+    }
+}
+//end index
+
+//start osago
+.product-image{
+    &__inner{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 10% center;
+        height: 50vh;
+        position: relative;
+    }
+    &__info{
+        position: absolute;
+        text-align: center;
+        right: 0;
+        left: 0;
+        bottom: calc(50% - 30px);
+        transform: translateY(50%);
+    }
+    &__title{
+        margin-bottom: 10px;
+    }
+    &__btn{
+        padding-left: 45px;
+        margin: 0 auto;
+        position: relative;
+        font-size: 13px;
+        &::after{
+            content: "";
+            background-image: url(../images/header/back-btn.svg);
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 10px;
+            top: 3px;
+            transform: scale(.8);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
 }
+.product__inner{
+    // display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
+    border-image-slice: 1;
+}
+.product__text{
+    // max-width: 580px;
+    background-color: $dark;
+    border-radius: 12px;
+    padding: 20px;
+    color: $form;
+    margin-bottom: 20px;
+    p{
+        font-weight: 500;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 15px;
+        a{
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+    }
+    span{
+        color: $element;
+        margin-left: 5px;
+    }
+}
+.to-form__link{
+    margin-right: 5px;
+}
+.product-btn{
+    color: #ccc;
+    &:hover{
+        color: #fff;
+    }
+    &:focus{
+        color: #fff;
+    }
+}
+.product__form{
+    background-color: rgba(49,42,40,.4);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 12px;
+}
+.form-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &__item{
+        display: block;
+        max-width: 375px;
+        width: 100%;
+        & + &{
+            margin-left: 5px;
+        }
+    }
+    &__name{
+        color: $form;
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+        span{
+            color: $element;
+            margin-right: 3px;
+            font-size: 20px;
+        }
+    }
+    &__input{
+        width: 100%;
+        background-color: $dark;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #fff;
+    }
+    &__textarea{
+        height: 100px;
+        max-width: 375px;
+    }
+}
+.form-inner{
+    &__item{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    &__name{
+        color: $form;
+        position: relative;
+        max-width: 375px;
+        width: 100%;
+        margin-right: 20px;
+        padding: 0;
+        text-align: left;
+        span{
+            color: $element;
+            font-size: 20px;
+            margin-right: 3px;
+        }
+    }
+    &__name-checkbox{
+        padding: 0 22px;
+        display: inline-block;
+        position: relative;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+        max-width: 375px;
+        width: 100%;
+        margin-right: 20px;
+    }
+    &__btn{
+        max-width: calc(50% - 5px);
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        & + &{
+            margin-left: 10px;
+        }
+    }
+}
+.btn-form{
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid $element;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 6px 0;
+    display: block;
+    background-color: transparent;
+    transition: all .3s;
+    &:hover{
+        background-color: $element;
+    }
+}
+.btn-submit{
+    width: 120px;
+    margin-top: 40px;
+}
+.product-submit{
+    position: relative;
+    margin: 14px 5px;
+    color: $form;
+    span{
+        color: $element;
+        font-size: 20px;
+        margin-right: 3px;
+    }
+}
+.btn-doc, .checkbox-doc{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.hint-link{
+    position: absolute;
+    top: -2px;
+    right: 0;
+}
+.added-driver__btn{
+    position: relative;
+    color: $form;
+    padding: 6px 22px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+        color: #ccc;
+    }
+    img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+}
+.checkbox-doc+label{
+    position: absolute;
+    top: 3px;
+    left: 0;
+    z-index: 1;
+}
+.checkbox-doc+label::before{
+    content: "";
+    display: inline-block;
+    background-color: $dark;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    cursor: pointer;
+}
+.checkbox-doc:checked+label::before{
+    background-image: url(../images/checked-img.svg);
+}
+.name-doc{
+    color: $form;
+    font-size: 12px;
+    max-width: 200px;
+}
+//end osago
+.test{
+    width: 0;
+    height: 0;
+}
+.fff{
+    background-color: #fff;
+    color: #000;
+    height: 50px;
+    width: 150px;
+    // position: absolute;
+    // display: block;
+}
+.sss{
+    color: #000;
+    margin-left: 200px;
+    display: block;
+}
+
 
 
 @import 'media';

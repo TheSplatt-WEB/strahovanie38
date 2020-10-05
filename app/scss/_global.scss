@@ -5,6 +5,16 @@ html{
 *, *::before, *::after{
     box-sizing: inherit;
 }
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: inherit;
+}
+textarea{
+    resize: none;
+}
 a{
     display: inline-block;
     text-decoration: none;
@@ -52,4 +62,32 @@ body{
 }
 .section{
     padding: 60px 0 0;
+}
+.request-call__btn{
+    font-family: 'MyFont', sans-serif;
+    font-size: 12px;
+    border: 1px solid $element;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all .3s;
+    max-width: 180px;
+    display: block;
+    &:hover{
+        background-color: $element;
+    }
+    &:focus{
+        background-color: $element;
+    }
+}
+.social-btn{
+    a{
+        margin: 10px;
+        transition: all .3s;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:focus{
+            transform: scale(1.1);
+        }
+    }
 }
