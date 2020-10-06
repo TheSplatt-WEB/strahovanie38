@@ -91,3 +91,36 @@ body{
         }
     }
 }
+.animated-modal {
+    max-width: 550px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: rgba($bg, .9);
+}
+.fancybox-slide--current .animated-modal{
+    transform: translateY(0);
+    opacity: 1;
+}
+#animatedModalPrivate{
+    max-width: 600px;
+    padding: 20px;
+    height: 50vh;
+}
+.private__title{
+    font-weight: 700;
+    color: #ccc;
+}
+.private__subtitle{
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+.private__descr{
+    font-weight: 400;
+    color: $form;
+    line-height: 20px;
+}
+.private__descr-list{
+    margin-left: 30px;
+}

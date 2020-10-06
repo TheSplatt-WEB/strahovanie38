@@ -172,6 +172,31 @@
         font-size: 16px;
     }
 }
+@media(max-width: 550px){
+    .form-inner__item{
+        display: block;
+    }
+    .form-inner__name{
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+    .form-wrapper{
+        display: block;
+    }
+    .form-wrapper__item{
+        max-width: 100%;
+    }
+    .form-wrapper__item+.form-wrapper__item{
+        margin-left: 0;
+    }
+    .form-inner__buttons{
+        margin: 0 auto;
+    }
+    .form-wrapper__textarea{
+        max-width: 100%;
+        
+    }
+}
 @media(max-width: 450px){
     .slider-top-item{
         background-position: 28% center;
@@ -217,5 +242,20 @@
         transform: scale(.7);
         bottom: 117px;
         right: 15px;
+    }
+    .hint-link__descr{
+        max-width: 100%;
+        left: 0;
+        &::before{
+            left: 147px;
+        }
+    }
+    .hint-link__descr-life{
+        &::before{
+            left: 181px;
+        }
+    }
+    .fancybox-content{
+        padding: 20px;
     }
 }

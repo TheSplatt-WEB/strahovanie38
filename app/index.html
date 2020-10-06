@@ -347,8 +347,22 @@
                     <div class="footer-item__contacts">
                         <a class="footer-item__phone" href="tel:+79140095858" title="Позвонить агенту">8 914 009 58
                             58</a>
-                        <a class="footer-item__btn request-call__btn" href="#" title="Заказать обратный звонок">Заказать
-                            звонок</a>
+                        <a class="footer-item__btn request-call__btn btn btn-primary" data-fancybox
+                            data-animation-duration="700" data-src="#animatedModal" href="javascript:;"
+                            title="Заказать обратный звонок">Заказать звонок</a>
+                            <div style="display: none;" id="animatedModal" class="animated-modal">
+                                <form class="fancybox-form">
+                                    <div class="fancybox-form__row">
+                                        <div class="form-wrapper__name"><span>*</span>Имя</div>
+                                        <input class="form-wrapper__input" type="text"
+                                            placeholder="Введите Ваше имя" required>
+                                    </div>
+                                    <div class="form-wrapper__name"><span>*</span>Телефон</div>
+                                    <input class="form-wrapper__input" type="tel"
+                                        placeholder="Введите Ваш номер телефона" required="required">
+                                    <button class="btn-form btn-submit" type="submit">Отправить</button>
+                                </form>
+                            </div>
                         <a class="footer-item__mail" href="mailto:strahovanie.38.irkutsk@gmail.com" target="_blank"
                             title="Связаться по email">strahovanie.38.irkutsk@gmail.com</a>
                     </div>

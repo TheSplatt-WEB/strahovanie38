@@ -669,6 +669,7 @@
         max-width: 375px;
         width: 100%;
         margin-right: 20px;
+        overflow: hidden;
     }
     &__btn{
         max-width: calc(50% - 5px);
@@ -719,23 +720,57 @@
     position: absolute;
     top: -2px;
     right: 0;
-}
-.added-driver__btn{
-    position: relative;
-    color: $form;
-    padding: 6px 22px;
     cursor: pointer;
-    transition: all .3s;
-    &:hover{
-        color: #ccc;
-    }
-    img{
+    &__descr{
+        background-color: $light;
+        border-radius: 6px;
+        padding: 0 10px;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
+        z-index: 3;
+        top: 25px;
+        left: 50px;
+        max-width: 300px;
+        width: 100%;
+        color: $dark;
+        font-size: 0;
+        height: 0;
+        overflow: hidden;
+        font-weight: 500;
+        transition: all .3s;
+        &::before{
+            content: "";
+            border-style: solid;
+            border-width: 0 7.5px 5px 7.5px;
+            border-color: transparent transparent $light transparent;
+            position: absolute;
+            top: -5px;
+            left: 97px;
+        }
+    }
+    &__descr-life{
+        z-index: 2;
+        &::before{
+            left: 131px;
+        }
     }
 }
+//Кнопка добавления нового водителя----------------------------------
+// .added-driver__btn{
+//     position: relative;
+//     color: $form;
+//     padding: 6px 22px;
+//     cursor: pointer;
+//     transition: all .3s;
+//     &:hover{
+//         color: #ccc;
+//     }
+//     img{
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         left: 0;
+//     }
+// }
 .checkbox-doc+label{
     position: absolute;
     top: 3px;
@@ -760,26 +795,8 @@
 .name-doc{
     color: $form;
     font-size: 12px;
-    max-width: 200px;
 }
 //end osago
-.test{
-    width: 0;
-    height: 0;
-}
-.fff{
-    background-color: #fff;
-    color: #000;
-    height: 50px;
-    width: 150px;
-    // position: absolute;
-    // display: block;
-}
-.sss{
-    color: #000;
-    margin-left: 200px;
-    display: block;
-}
 
 
 
