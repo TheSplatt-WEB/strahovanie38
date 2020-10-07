@@ -9,6 +9,9 @@
     border-bottom: 1px solid transparent;
     border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
     border-image-slice: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     z-index: 5;
 }
 .header-inner{
@@ -531,7 +534,13 @@
         transform: translateY(50%);
     }
     &__title{
-        margin-bottom: 10px;
+        margin: 0 auto 10px;
+        max-width: 700px;
+        text-transform: none;
+        span{
+            margin-left: 10px;
+            color: $element;
+        }
     }
     &__btn{
         padding-left: 45px;
@@ -553,16 +562,15 @@
     }
 }
 .product__inner{
-    // display: flex;
-    justify-content: space-around;
-    align-items: center;
     padding-bottom: 30px;
     border-bottom: 1px solid transparent;
     border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
     border-image-slice: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 .product__text{
-    // max-width: 580px;
     background-color: $dark;
     border-radius: 12px;
     padding: 20px;
@@ -585,6 +593,9 @@
 }
 .to-form__link{
     margin-right: 5px;
+}
+.work-btn{
+    margin: 30px auto 0;
 }
 .product-btn{
     color: #ccc;
