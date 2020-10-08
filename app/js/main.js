@@ -25,7 +25,7 @@ $(function(){
     $('.header-inner__menu-btn, .header-link').on('click', function(){
         if (!$('.header-link').hasClass('openDone')) {
             $('.header-link').addClass('openDone');
-            $('.header-inner__list li').css({'left': '-10px', 'right': '-10px'});
+            $('.header-inner__list li').css({'left': '-15px', 'right': '-15px'});
         }
         else {
             $('.header-link').removeClass('openDone');
@@ -81,42 +81,22 @@ $(function(){
         }
     });
     $('.hint-link__kasko').on('click', function(){
-        if (!$('.hint-link__descr-kasko').hasClass('openDone')) {
-            $('.hint-link__descr-kasko').addClass('openDone');
-            $('.hint-link__descr-kasko').css({'padding': '10px', 'overflow': 'visible', 'height': 'auto', 'font-size': '14px'});
-        }
-        else {
-            $('.hint-link__descr-kasko').removeClass('openDone');
-            $('.hint-link__descr-kasko').css({'padding': '0 10px', 'overflow': 'hidden', 'height': '0', 'font-size': '0'});
-        }
+        $('.hint-link__descr-kasko').fadeToggle();
     });
     $(document).on('click', function(e){
         if (!$('.hint-link__kasko').is(e.target) && $('.hint-link__kasko').has(e.target).length === 0 &&
         !$('.hint-link__descr-kasko').is(e.target) && $('.hint-link__descr-kasko').has(e.target).length === 0){
-            $('.hint-link__descr-kasko').removeClass('openDone');
-            $('.hint-link__descr-kasko').css({'padding': '0 10px', 'overflow': 'hidden', 'height': '0', 'font-size': '0'});
+            $('.hint-link__descr-kasko').fadeOut();
         }
     });
     $('.hint-link__life').on('click', function(){
-        if (!$('.hint-link__descr-life').hasClass('openDone')) {
-            $('.hint-link__descr-life').addClass('openDone');
-            $('.hint-link__descr-life').css({'padding': '10px', 'overflow': 'visible', 'height': 'auto', 'font-size': '14px'});
-        }
-        else {
-            $('.hint-link__descr-life').removeClass('openDone');
-            $('.hint-link__descr-life').css({'padding': '0 10px', 'overflow': 'hidden', 'height': '0', 'font-size': '0'});
-        }
+        $('.hint-link__descr-life').fadeToggle();
     });
     $(document).on('click', function(e){
         if (!$('.hint-link__life').is(e.target) && $('.hint-link__life').has(e.target).length === 0 &&
         !$('.hint-link__descr-life').is(e.target) && $('.hint-link__descr-life').has(e.target).length === 0){
-            $('.hint-link__descr-life').removeClass('openDone');
-            $('.hint-link__descr-life').css({'padding': '0 10px', 'overflow': 'hidden', 'height': '0', 'font-size': '0'});
+            $('.hint-link__descr-life').fadeOut();
         }
     });
-    //Кнопка добавления нового водителя---------------------------------------------------------------
-    // $('.added-driver__btn').on('click', function() {
-    //     $('.form-inner__driver').append('<div class="form-inner__item form-inner__item-driver"><p class="form-inner__name"><span>*</span>Водительское удостоверение</p><div class="form-inner__buttons"><div class="form-inner__btn"><label class="btn-form" for="driver-3">Лицевая</label><span class="name-doc">файл не выбран</span><input class="btn-doc" id="driver-3" type="file" multiple required></div><div class="form-inner__btn"><label class="btn-form" for="driver-4">Оборотная</label><span class="name-doc">файл не выбран</span><input class="btn-doc" id="driver-4" type="file" multiple required></div></div></div>')
-    // });
 });
 

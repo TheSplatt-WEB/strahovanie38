@@ -4,14 +4,15 @@
 //start index
 .header{
     background-color: rgba($dark, .9);
+    max-width: 100%;
     width: 100%;
     position: fixed;
-    border-bottom: 1px solid transparent;
-    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-    border-image-slice: 1;
-    border-top: none;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%) 0 0 100% 0;
     border-left: none;
     border-right: none;
+    border-top: none;
     z-index: 5;
 }
 .header-inner{
@@ -204,9 +205,12 @@
 }
 .work{
     &__inner{
-        border-bottom: 1px solid transparent;
-        border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-        border-image-slice: 1;
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%) 0 0 100% 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
         padding-bottom: 40px;
         text-align: center;
     }
@@ -245,9 +249,12 @@
     margin-left: -15px;
     justify-content: center;
     flex-wrap: wrap;
-    border-bottom: 1px solid transparent;
-    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-    border-image-slice: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%) 0 0 100% 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
     padding-bottom: 40px;
 }
 .big-item{
@@ -491,9 +498,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-    border-image-slice: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%) 100% 0 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
 }
 .footer-item__info, .footer-item__social, .footer-item__contacts{
     max-width: 300px;
@@ -522,6 +532,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 10% center;
+        width: 100%;
         height: 50vh;
         position: relative;
     }
@@ -562,10 +573,9 @@
     }
 }
 .product__inner{
-    padding-bottom: 30px;
-    border-bottom: 1px solid transparent;
-    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%);
-    border-image-slice: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, rgba(58,51,48,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(58,51,48,1) 100%) 0 0 100% 0;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -608,9 +618,7 @@
 }
 .product__form{
     background-color: rgba(49,42,40,.4);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 60px 20px 20px;
     border-radius: 12px;
 }
 .form-wrapper{
@@ -619,7 +627,6 @@
     margin-bottom: 20px;
     &__item{
         display: block;
-        max-width: 375px;
         width: 100%;
         & + &{
             margin-left: 5px;
@@ -649,6 +656,10 @@
         height: 100px;
         max-width: 375px;
     }
+}
+.product__form{
+    position: relative;
+    overflow-x: hidden;
 }
 .form-inner{
     &__item{
@@ -735,7 +746,7 @@
     &__descr{
         background-color: $light;
         border-radius: 6px;
-        padding: 0 10px;
+        padding: 10px;
         position: absolute;
         z-index: 3;
         top: 25px;
@@ -743,11 +754,8 @@
         max-width: 300px;
         width: 100%;
         color: $dark;
-        font-size: 0;
-        height: 0;
-        overflow: hidden;
         font-weight: 500;
-        transition: all .3s;
+        display: none;
         &::before{
             content: "";
             border-style: solid;
@@ -765,23 +773,6 @@
         }
     }
 }
-//Кнопка добавления нового водителя----------------------------------
-// .added-driver__btn{
-//     position: relative;
-//     color: $form;
-//     padding: 6px 22px;
-//     cursor: pointer;
-//     transition: all .3s;
-//     &:hover{
-//         color: #ccc;
-//     }
-//     img{
-//         position: absolute;
-//         top: 50%;
-//         transform: translateY(-50%);
-//         left: 0;
-//     }
-// }
 .checkbox-doc+label{
     position: absolute;
     top: 3px;

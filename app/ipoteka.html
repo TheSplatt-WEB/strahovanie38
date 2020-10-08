@@ -61,9 +61,8 @@
                         <div class="product__inner">
                             <div class="product__text">
                                 <div class="product__descr">
-                                    <p><span>Страница</span> в разработке</p>
-                                    <p>Для расчета стоимости и оформления полиса просто заполните <a
-                                            class="to-form__link" href="#form">форму отправки</a>ниже,
+                                    <p>Для расчета стоимости и оформления полиса ипотечного страхования просто заполните
+                                        <a class="to-form__link" href="#form">форму отправки</a>ниже,
                                         или свяжитесь с нами любым удобным для Вас способом:</p>
                                     <div class="social-product social-btn">
                                         <a href="https://instagram.com/strahovanie.38/" target="_blank"
@@ -81,10 +80,19 @@
                                             title="Связаться по email"><img src="images/footer/social/social-mail.svg"
                                                 alt="Icon email for massage"></a>
                                     </div>
-                                    <p>Расчет стоимости займет от 10 до 15 минут, после чего с Вами свяжется наш
-                                        специалист, для дальнейшего оформления.</p>
-                                    <p>Вы получите полис в электронном виде на e-mail или по средством любого,
-                                        удобного для Вас, мессенджера.</p>
+                                    <p>
+                                        Расчет стоимости займет от 10 до 15 минут, после чего с Вами свяжется наш
+                                        специалист, для дальнейшего оформления.
+                                    </p>
+                                    <p>
+                                        Вы получите полис в электронном виде с факсимильной подписью страховой компании
+                                        на e-mail или по средством любого,
+                                        удобного для Вас, мессенджера.
+                                    </p>
+                                    <p>
+                                        При необходимости, мы можем доставить Вам полис на бланке по городу Иркутск, а
+                                        так же отправить в города Ангарск, Шелехов и Усолье-Сибирское.
+                                    </p>
                                     <p class="dib">
                                         Если у Вас остались вопросы, Вы можете<a href="tel:+79140095858">позвонить
                                             нам</a>, или же оставить заявку на
@@ -108,7 +116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product__form section" id="form">
+                            <div class="product__form" id="form">
                                 <form action="">
                                     <div class="form-wrapper">
                                         <div class="form-wrapper__item">
@@ -129,7 +137,7 @@
                                     </div>
                                     <div class="form-inner">
                                         <div class="form-inner__item">
-                                            <div class="form-inner__name"><span>*</span>Паспорт владельца ТС</div>
+                                            <div class="form-inner__name"><span>*</span>Паспорт заемщика</div>
                                             <div class="form-inner__buttons">
                                                 <div class="form-inner__btn">
                                                     <label class="btn-form" for="passport-1">Главная</label>
@@ -144,80 +152,26 @@
                                             </div>
                                         </div>
                                         <div class="form-inner__item">
-                                            <div class="form-inner__name"><span>*</span>Свидетельство о регистрации ТС
-                                                или
-                                                ПТС
+                                            <div class="form-inner__name"><span>*</span>Технический паспорт помещения
                                             </div>
                                             <div class="form-inner__buttons">
                                                 <div class="form-inner__btn">
-                                                    <label class="btn-form" for="reg-1">Лицевая</label>
-                                                    <span class="name-doc">файл не выбран</span>
-                                                    <input class="btn-doc" id="reg-1" type="file" required>
-                                                </div>
-                                                <div class="form-inner__btn">
-                                                    <label class="btn-form" for="reg-2">Оборотная</label>
+                                                    <label class="btn-form" for="driver-1">Все страницы</label>
                                                     <span class="name-doc">файлы не выбраны</span>
-                                                    <input class="btn-doc" id="reg-2" type="file" multiple required>
+                                                    <input class="btn-doc" id="driver-1" type="file" multiple required>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="product-submit">
-                                            <input class="checkbox-doc" id="checkbox-unlimit" type="checkbox" name="">
-                                            <label for="checkbox-unlimit"></label>
-                                            <div class="form-inner__name-checkbox">Без ограничений</div>
-                                        </div>
-                                        <div class="form-inner__driver">
-                                            <div class="form-inner__item form-inner__item-driver">
-                                                <div class="form-inner__name"><span>*</span>Водительские удостоверения
-                                                    всех лиц, допущенных к управлению ТС</div>
-                                                <div class="form-inner__buttons">
-                                                    <div class="form-inner__btn">
-                                                        <label class="btn-form" for="driver-1">Лицевая</label>
-                                                        <span class="name-doc">файлы не выбраны</span>
-                                                        <input class="btn-doc" id="driver-1" type="file" multiple
-                                                            required>
-                                                    </div>
-                                                    <div class="form-inner__btn">
-                                                        <label class="btn-form" for="driver-2">Оборотная</label>
-                                                        <span class="name-doc">файлы не выбраны</span>
-                                                        <input class="btn-doc" id="driver-2" type="file" multiple
-                                                            required>
-                                                    </div>
-                                                </div>
+                                        <div class="form-wrapper">
+                                            <div class="form-wrapper__item">
+                                                <div class="form-wrapper__name"><span>*</span>Наименование банка</div>
+                                                <input class="form-wrapper__input" type="text"
+                                                    placeholder="Введите название банка" required>
                                             </div>
-                                        </div>
-                                        <!-- Кнопка добавления нового водителя-------------------------------------------------------->
-                                        <!-- <div class="form-inner__item">
-                                            <div class="form-inner__name"></div>
-                                            <div class="form-inner__buttons">
-                                                <div class="added-driver__btn" title="Добавить водителя">
-                                                    <span>Добавить водителя</span>
-                                                    <img src="images/add_circle_outline.svg" alt="image for add driver">
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <div class="product-submit">
-                                            <input class="checkbox-doc" id="checkbox-noinspect" type="checkbox" name="">
-                                            <label for="checkbox-noinspect"></label>
-                                            <div class="form-inner__name-checkbox">Нет диагностической карты тех.
-                                                осмотра
-                                            </div>
-                                        </div>
-                                        <div class="form-inner__item form-inner__item-inspect">
-                                            <div class="form-inner__name"><span>*</span>Диагностическая карта тех.
-                                                осмотра
-                                            </div>
-                                            <div class="form-inner__buttons">
-                                                <div class="form-inner__btn">
-                                                    <label class="btn-form" for="inspect-1">Лицевая</label>
-                                                    <span class="name-doc">файл не выбран</span>
-                                                    <input class="btn-doc" id="inspect-1" type="file" required>
-                                                </div>
-                                                <div class="form-inner__btn">
-                                                    <label class="btn-form" for="inspect-2">Оборотная</label>
-                                                    <span class="name-doc">файл не выбран</span>
-                                                    <input class="btn-doc" id="inspect-2" type="file" required>
-                                                </div>
+                                            <div class="form-wrapper__item">
+                                                <div class="form-wrapper__name"><span>*</span>Сумма кредита</div>
+                                                <input class="form-wrapper__input" type="text"
+                                                    placeholder="Введите сумму кредита" required>
                                             </div>
                                         </div>
                                         <div class="product-submit__inner">
@@ -225,30 +179,15 @@
                                                 <input class="checkbox-doc" id="checkbox-subproduct--one"
                                                     type="checkbox" name="">
                                                 <label for="checkbox-subproduct--one"></label>
-                                                <div class="form-inner__name-checkbox">КАСКО минимум<img
+                                                <div class="form-inner__name-checkbox">Страхование жизни<img
                                                         class="hint-link hint-link__kasko" src="images/help_outline.svg"
                                                         alt="Icon hint" title="Подробнее">
                                                 </div>
                                                 <div class="hint-link__descr hint-link__descr-kasko">
-                                                    <p>Воспользуйтесь возможностью получить компенсацию за ремонт Вашего
-                                                        автомобиля, в случае, если Вы не являетесь виновником ДТП, а у
-                                                        виновника нет полиса ОСАГО.</p>
-                                                </div>
-                                            </div>
-                                            <div class="product-submit">
-                                                <input class="checkbox-doc" id="checkbox-subproduct--two"
-                                                    type="checkbox" name="">
-                                                <label for="checkbox-subproduct--two"></label>
-                                                <div class="form-inner__name-checkbox">Страхование жизни<img
-                                                        class="hint-link hint-link__life" src="images/help_outline.svg"
-                                                        alt="Icon hint" title="Подробнее">
-                                                </div>
-                                                <div class="hint-link__descr hint-link__descr-life">
-                                                    <p>Как известно, ОСАГО, это страхование Вашей ответственности, но не
-                                                        Ваших материальных ценностей, жизни и здоровья. Однако важнее
-                                                        жизни и здоровья нет ничего! Позаботьтесь о себе и своих
-                                                        близких, оформив полис страхования жизни и здоровья всех людей,
-                                                        находящихся в Вашем автомобиле, на случай ДТП.</p>
+                                                    <p>Для оформления ипотечного кредита некоторые банки требуют помимо объекта
+                                                        недвижимости застраховать жизнь заемщика. Для того что бы
+                                                        воспользоваться данной услугой отметьте это поле, поставив
+                                                        галочку.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -555,27 +494,50 @@
                                                     <div class="private__descr">
                                                         <ul class="private__descr-list">
                                                             <li>
-                                                                <p>7.1. Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.</p>
+                                                                <p>7.1. Оператор до начала осуществления трансграничной
+                                                                    передачи персональных данных обязан убедиться в том,
+                                                                    что иностранным государством, на территорию которого
+                                                                    предполагается осуществлять передачу персональных
+                                                                    данных, обеспечивается надежная защита прав
+                                                                    субъектов персональных данных.</p>
                                                             </li>
                                                             <li>
-                                                                <p>7.2. Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.</p>
+                                                                <p>7.2. Трансграничная передача персональных данных на
+                                                                    территории иностранных государств, не отвечающих
+                                                                    вышеуказанным требованиям, может осуществляться
+                                                                    только в случае наличия согласия в письменной форме
+                                                                    субъекта персональных данных на трансграничную
+                                                                    передачу его персональных данных и/или исполнения
+                                                                    договора, стороной которого является субъект
+                                                                    персональных данных.</p>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <h5 class="private__subtitle">8. Заключительные положения</h5>
-                                                    <div class="private__descr"><ul class="private__descr-list">
-                                                        <li>
-                                                            <p>8.1. Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты strahovanie.38.irkutsk@gmail.com.</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>8.2. В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>8.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу http://strahovanie38.ru.</p>
-                                                        </li>
-                                                    </ul></div>
+                                                    <div class="private__descr">
+                                                        <ul class="private__descr-list">
+                                                            <li>
+                                                                <p>8.1. Пользователь может получить любые разъяснения по
+                                                                    интересующим вопросам, касающимся обработки его
+                                                                    персональных данных, обратившись к Оператору с
+                                                                    помощью электронной почты
+                                                                    strahovanie.38.irkutsk@gmail.com.</p>
+                                                            </li>
+                                                            <li>
+                                                                <p>8.2. В данном документе будут отражены любые
+                                                                    изменения политики обработки персональных данных
+                                                                    Оператором. Политика действует бессрочно до замены
+                                                                    ее новой версией.</p>
+                                                            </li>
+                                                            <li>
+                                                                <p>8.3. Актуальная версия Политики в свободном доступе
+                                                                    расположена в сети Интернет по адресу
+                                                                    http://strahovanie38.ru.</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
