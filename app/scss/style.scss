@@ -531,9 +531,9 @@
     &__inner{
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 10% center;
+        background-position: 10% bottom;
         width: 100%;
-        height: 50vh;
+        height: 60vh;
         position: relative;
     }
     &__info{
@@ -558,6 +558,10 @@
         margin: 0 auto;
         position: relative;
         font-size: 13px;
+        box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+        &:hover{
+            box-shadow: none;
+        }
         &::after{
             content: "";
             background-image: url(../images/header/back-btn.svg);
@@ -623,10 +627,10 @@
 }
 .form-wrapper{
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
     &__item{
         display: block;
+        max-width: 383px;
         width: 100%;
         & + &{
             margin-left: 5px;
@@ -637,9 +641,12 @@
         position: relative;
         display: block;
         margin-bottom: 10px;
+        padding-left: 11px;
         span{
             color: $element;
-            margin-right: 3px;
+            position: absolute;
+            top: -4px;
+            left: 0;
             font-size: 20px;
         }
     }
@@ -654,7 +661,7 @@
     }
     &__textarea{
         height: 100px;
-        max-width: 375px;
+        max-width: 383px;
     }
 }
 .product__form{
@@ -665,13 +672,14 @@
     &__item{
         display: flex;
         margin-bottom: 10px;
+        position: relative;
     }
     &__name{
         color: $form;
         position: relative;
-        max-width: 375px;
+        max-width: 383px;
         width: 100%;
-        margin-right: 20px;
+        margin-right: 5px;
         padding: 0;
         text-align: left;
         span{
@@ -688,7 +696,7 @@
     &__buttons{
         display: flex;
         justify-content: space-between;
-        max-width: 375px;
+        max-width: 383px;
         width: 100%;
         margin-right: 20px;
         overflow: hidden;
@@ -770,6 +778,20 @@
         z-index: 2;
         &::before{
             left: 131px;
+        }
+    }
+    &__ipoteka{
+        left: 169px;
+        right: auto;
+    }
+    &__descr-ipoteka{
+        a{
+            color: $element;
+            text-decoration: underline;
+            display: inline;
+        }
+        &::before{
+            left: 119px;
         }
     }
 }
