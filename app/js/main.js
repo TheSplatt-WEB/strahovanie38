@@ -3,6 +3,8 @@ $(function(){
         prevArrow: '<button type="button" class="slick-prev slick-arrow" style="background-image: url(../images/arrow-left.svg);"></button>',
         nextArrow: '<button type="button" class="slick-next slick-arrow" style="background-image: url(../images/arrow-right.svg);"></button>',
         autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 600,
         pauseOnFocus: false,
         pauseOnHover: false,
         dots: true,

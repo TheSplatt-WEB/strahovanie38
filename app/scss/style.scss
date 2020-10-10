@@ -368,6 +368,9 @@
         justify-content: center;
         position: relative;
         margin-bottom: 20px;
+        picture{
+            text-align: center;
+        }
         img{
             transition: all .3s;
             width: 150px;
@@ -418,9 +421,6 @@
     }
 }
 .stock{
-    .big-item__img{
-        background-size: contain;
-    }
     .big-item__title{
         color: #fff;
     }
@@ -488,7 +488,6 @@
         flex-wrap: wrap;
         justify-content: center;
         img{
-            // transform: scale(.8);
             padding: 10px;
         }
     }
@@ -632,6 +631,7 @@
         display: block;
         max-width: 383px;
         width: 100%;
+        margin-top: 5px;
         & + &{
             margin-left: 5px;
         }
@@ -722,6 +722,9 @@
     background-color: transparent;
     transition: all .3s;
     &:hover{
+        background-color: $element;
+    }
+    &:active{
         background-color: $element;
     }
 }
