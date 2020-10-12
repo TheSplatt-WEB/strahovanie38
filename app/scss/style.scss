@@ -721,11 +721,15 @@
     display: block;
     background-color: transparent;
     transition: all .3s;
+    outline: none;
     &:hover{
         background-color: $element;
     }
     &:active{
         background-color: $element;
+    }
+    &:visited{
+        background-color: transparent;
     }
 }
 .btn-submit{

@@ -100,5 +100,51 @@ $(function(){
             $('.hint-link__descr-life').fadeOut();
         }
     });
+    $(".fancybox-form").on('submit', function() {
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: th.serialize()
+		}).done(function() {
+			alert("Ваша заявка принята. Наш специалист свяжется с Вами в течении 15 минут.");
+			setTimeout(function() {
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+    });
+    $.fn.setCursorPosition = function(pos) {
+        if ($(this).get(0).setSelectionRange) {
+          $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+          var range = $(this).get(0).createTextRange();
+          range.collapse(true);
+          range.moveEnd('character', pos);
+          range.moveStart('character', pos);
+          range.select();
+        }
+      };
+      $('input[type="tel"]').on('click', function(){
+        $(this).setCursorPosition(3);
+      });
+    $("input[type=tel]").mask("+7 (999) 999-9999");
+    document.getElementById('ajax-contact-form').addEventListener('submit', function(evt){
+        var http = new XMLHttpRequest(), f = this;
+        var th = $(this);
+        evt.preventDefault();
+        http.open("POST", "contact.php", true);
+        http.onreadystatechange = function() {
+          if (http.readyState == 4 && http.status == 200) {
+            alert(http.responseText);
+            if (http.responseText.indexOf(f.nameFF.value) == 0) {
+              th.trigger("reset");
+            }
+          }
+        }
+        http.onerror = function() {
+          alert('Ошибка, попробуйте еще раз');
+        }
+        http.send(new FormData(f));
+      }, false);
 });
-

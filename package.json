@@ -18,6 +18,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
+    "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1"
   }
