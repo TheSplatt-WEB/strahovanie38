@@ -1,5 +1,5 @@
-@import 'vars';
 @import 'fonts';
+@import 'vars';
 @import 'global';
 //start index
 .header{
@@ -13,7 +13,7 @@
     border-left: none;
     border-right: none;
     border-top: none;
-    z-index: 5;
+    z-index: 10;
 }
 .header-inner{
     min-height: 60px;
@@ -36,7 +36,7 @@
         }
         a{
             text-transform: uppercase;
-            color: #ccc;
+            color: rgb(197, 197, 197);
             transition: all .3s;
             outline: none;
             &:hover{
@@ -594,18 +594,19 @@
         line-height: 24px;
         display: block;
         margin-bottom: 15px;
-        a{
-            margin-left: 5px;
-            text-decoration: underline;
-        }
     }
     span{
         color: $element;
         margin-left: 5px;
     }
 }
-.to-form__link{
-    margin-right: 5px;
+.to-form__link, a.link{
+    margin-left: 5px;
+    text-decoration: underline;
+    color: #ccc;
+    &:focus{
+        text-decoration-color: $element;
+    }
 }
 .work-btn{
     margin: 30px auto 0;
@@ -619,145 +620,228 @@
         color: #fff;
     }
 }
-.product__form{
-    background-color: rgba(49,42,40,.4);
-    padding: 60px 20px 20px;
+.form{
+    width: 100%;
+    background-color: rgba(49,42,40,0.4);
     border-radius: 12px;
+    padding: 60px 20px 20px;
+    margin-bottom: 40px;
+    & *{
+        color: $form;
+        outline: none;
+    }
 }
-.form-wrapper{
+// .form__body{
+//     position: relative;
+//     &::before{
+//         content: "";
+//         position: absolute;
+//         left: -20px;
+//         top: -60px;
+//         right: -20px;
+//         bottom: -20px;
+//         border-radius: 12px;
+//         z-index: 3;
+//         background: rgba($dark, .8) url(../images/loading-form.gif) center / 50px no-repeat;
+//         transition: background .5s;
+//         opacity: 0;
+//         visibility: hidden;
+//     }
+//     &.__sending::before{
+//         opacity: 1;
+//         visibility: visible;
+//     }
+// }
+.form__wrapper{
     display: flex;
-    margin-bottom: 20px;
-    &__item{
-        display: block;
-        max-width: 383px;
-        width: 100%;
-        margin-top: 5px;
-        & + &{
-            margin-left: 5px;
-        }
-    }
-    &__name{
-        color: $form;
-        position: relative;
-        display: block;
-        margin-bottom: 10px;
-        padding-left: 11px;
-        span{
-            color: $element;
-            position: absolute;
-            top: -4px;
-            left: 0;
-            font-size: 20px;
-        }
-    }
-    &__input{
-        width: 100%;
-        background-color: $dark;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 15px;
-        font-size: 14px;
-        color: #fff;
-    }
-    &__textarea{
-        height: 100px;
-        max-width: 383px;
+    margin-bottom: 10px;
+}
+.form__item{
+    max-width: 383px;
+    width: 100%;
+    margin-bottom: 10px;
+    & + &{
+        margin-left: 5px;
     }
 }
-.product__form{
-    position: relative;
-    overflow-x: hidden;
-}
-.form-inner{
-    &__item{
-        display: flex;
-        margin-bottom: 10px;
-        position: relative;
-    }
-    &__name{
+.fancybox-form{
+    & *{
+        outline: none;
         color: $form;
-        position: relative;
-        max-width: 383px;
-        width: 100%;
+    }
+    .form__item{
+        max-width: 100%;
+    }
+    .form__item + .form__item{
+        margin-left: 0;
+    }
+}
+.form__label{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    span{
+        color: $element;
         margin-right: 5px;
-        padding: 0;
-        text-align: left;
-        span{
-            color: $element;
-            font-size: 20px;
-            margin-right: 3px;
-        }
-    }
-    &__name-checkbox{
-        padding: 0 22px;
-        display: inline-block;
-        position: relative;
-    }
-    &__buttons{
-        display: flex;
-        justify-content: space-between;
-        max-width: 383px;
-        width: 100%;
-        margin-right: 20px;
-        overflow: hidden;
-    }
-    &__btn{
-        max-width: calc(50% - 5px);
-        width: 100%;
-        overflow: hidden;
-        text-align: center;
-        & + &{
-            margin-left: 10px;
-        }
+        font-size: 18px;
     }
 }
-.btn-form{
+.form__input{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: $dark;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    &:focus{
+        border: 1px solid $element;
+    }
+    &._error{
+        border: 1px solid red;
+    }
+}
+.files__item{
+    display: flex;
+    margin-bottom: 10px;
+    position: relative;
+    textarea{
+        height: 100px;
+    }
+}
+.files__name{
+    max-width: 383px;
+    width: 100%;
+    margin-bottom: 10px;
+    span{
+        margin-right: 5px;
+        color: $element;
+        font-size: 18px;
+    }
+}
+.files__buttons{
+    display: flex;
+    max-width: 383px;
+    width: 100%;
+    margin-left: 5px;
+}
+.files__btn{
+    position: relative;
+    max-width: calc(50% - 5px);
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    span{
+        font-size: 12px;
+    }
+    & + &{
+        margin-left: 10px;
+    }
+}
+.files__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+    &:hover + .files__choose{
+        background-color: $element;
+    }
+    &:focus + .files__choose{
+        background-color: $element;
+    }
+}
+.files__choose{
+    width: 100%;
+    border: 1px solid $element;
+    padding: 6px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 14px;
+    transition: all .3s;
+}
+.checkbox__input{
+    opacity: 0;
+    width: 0;
+    &:checked + .checkbox__label::before{
+        background-image: url(../images/checked-img.svg);
+        background-size: 65%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &:focus + .checkbox__label::before{
+        border: 1px solid $element;
+    }
+    // &._error .checkbox__label::before{
+    //     border: 1px solid red;
+    // }
+}
+.checkbox{
+    display: inline-block;
+}
+.checkbox__label-life{
+    margin-right: -4px;
+}
+.checkbox__label{
+    position: relative;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+    display: inline-block;
+    &:focus{
+        background-color: #fff;
+    }
+    span{
+        color: $element;
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    &::before{
+        content: "";
+        background-color: $dark;
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+        margin-right: 5px;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        border: 1px solid transparent;
+    }
+}
+.form__button{
+    max-width: 120px;
+    width: 100%;
     font-size: 14px;
     color: #fff;
     border: 1px solid $element;
     border-radius: 15px;
     cursor: pointer;
-    padding: 6px 0;
-    display: block;
     background-color: transparent;
     transition: all .3s;
-    outline: none;
+    padding: 6px;
+    margin-top: 40px;
     &:hover{
         background-color: $element;
     }
-    &:active{
+    &:focus{
         background-color: $element;
     }
-    &:visited{
-        background-color: transparent;
-    }
-}
-.btn-submit{
-    width: 120px;
-    margin-top: 40px;
-}
-.product-submit{
-    position: relative;
-    margin: 14px 5px;
-    color: $form;
-    span{
-        color: $element;
-        font-size: 20px;
-        margin-right: 3px;
-    }
-}
-.btn-doc, .checkbox-doc{
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 .hint-link{
-    position: absolute;
-    top: -2px;
-    right: 0;
+    margin-left: 7px;
     cursor: pointer;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    &:hover{
+        border: 1px solid $element;
+    }
+    &:focus{
+        border: 1px solid $element;
+    }
     &__descr{
         background-color: $light;
         border-radius: 6px;
@@ -778,13 +862,13 @@
             border-color: transparent transparent $light transparent;
             position: absolute;
             top: -5px;
-            left: 97px;
+            left: 101px;
         }
     }
     &__descr-life{
         z-index: 2;
         &::before{
-            left: 131px;
+            left: 135px;
         }
     }
     &__ipoteka{
@@ -798,36 +882,82 @@
             display: inline;
         }
         &::before{
-            left: 119px;
+            left: 121px;
         }
     }
 }
-.checkbox-doc+label{
-    position: absolute;
-    top: 3px;
-    left: 0;
-    z-index: 1;
+.added__driver{
+    color: #ccc;
+    padding: 0 0 0 25px;
+    position: relative;
+    &:hover.added__driver::after{
+        background-color: $element;
+    }
+    &:focus.added__driver::after{
+        background-color: $element;
+    }
+    &::before{
+        content: "+";
+        position: absolute;
+        top: -2px;
+        left: 5px;
+        font-size: 20px;
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1.5px;
+        height: 18px;
+        width: 18px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        transition: all .3s;
+    }
 }
-.checkbox-doc+label::before{
-    content: "";
-    display: inline-block;
-    background-color: $dark;
-    border-radius: 2px;
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-    cursor: pointer;
+.added__man{
+    color: #ccc;
+    padding: 0 0 0 25px;
+    position: relative;
+    &:hover.added__man::after{
+        background-color: $element;
+    }
+    &:focus.added__man::after{
+        background-color: $element;
+    }
+    &::before{
+        content: "+";
+        position: absolute;
+        top: -2px;
+        left: 5px;
+        font-size: 20px;
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1.5px;
+        height: 18px;
+        width: 18px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        transition: all .3s;
+    }
 }
-.checkbox-doc:checked+label::before{
-    background-image: url(../images/checked-img.svg);
+.remove__driver{
+    margin-left: 10px;
+    color: #ccc;
+    transition: all .3s;
+    font-size: 13px;
+    &:hover{
+        color: $element;
+    }
+    &:focus{
+        color: $element;
+    }
 }
-.name-doc{
-    color: $form;
-    font-size: 12px;
-}
-//end osago
 
 
 

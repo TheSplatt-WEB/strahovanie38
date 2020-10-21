@@ -24,7 +24,7 @@
     .section{
         padding: 44px 0 0;
     }
-    .product__form{
+    .form{
         padding: 44px 10px 10px;
     }
     .header-inner{
@@ -176,29 +176,31 @@
     }
 }
 @media(max-width: 550px){
-    .form-inner__item{
+    .form__wrapper{
         display: block;
     }
-    .form-inner__name{
-        margin-bottom: 10px;
+    .form__item{
         max-width: 100%;
+        & + &{
+            margin-left: 0;
+        }
     }
-    .form-wrapper{
+    .files__item{
         display: block;
+        textarea{
+            margin-top: 10px;
+        }
     }
-    .form-wrapper__item{
+    .tiles__textarea{
         max-width: 100%;
     }
-    .form-wrapper__item+.form-wrapper__item{
-        margin-left: 0;
+    .files__name{
+        max-width: 100%;
     }
-    .form-inner__buttons{
+    .files__buttons{
         margin: 0 auto;
     }
-    .form-wrapper__textarea{
-        max-width: 100%;
-        
-    }
+
 }
 @media(max-width: 450px){
     .slider-top-item{
@@ -250,17 +252,17 @@
         max-width: 100%;
         left: 0;
         &::before{
-            left: 147px;
+            left: 155px;
         }
     }
     .hint-link__descr-life{
         &::before{
-            left: 181px;
+            left: 185px;
         }
     }
     .hint-link__descr-ipoteka{
         &::before{
-            left: 169px;
+            left: 171px;
         }
     }
     .fancybox-content{

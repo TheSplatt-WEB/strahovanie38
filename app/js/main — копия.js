@@ -59,6 +59,10 @@ $(function(){
         }, 800);
         return false;
     });
+//////////////////////////////////////////////////////////////////////////////////////
+
+//вывод имени загруженных файлов в span
+
     $('body').on('change', '.files__input', function () {
         var name_file = [];
         for (var i = 0; i < $(this).get(0).files.length; ++i) {
@@ -66,6 +70,11 @@ $(function(){
         }
         $(this).next().next('span').text(name_file.join(", "));
     });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//скрытие/показ блоков с водителями и диагностической картой при установке/снятии флажка с чекбокса
+
     $('body').on('change', 'input#formNodrivers', function () {
         if (!$('.files__item-nodrivers').hasClass('openDone')) {
             $('.files__item-nodrivers').addClass('openDone');
@@ -92,15 +101,27 @@ $(function(){
             $('.files__input-noinspect').prop('required', true);
         }
     });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//кнопка удалить водителя (появляется только при нажатии на "добавить водителя")
+
     $('body').on('click', '.remove__driver', function(){
         $(this).parent().parent().remove()
     });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//кнопка добавить водителя. Добавляет код блока с загрузкой сканов водительских удостоверений, а так же кнопкой "удалить"
+
     $('body').on('click', '.added__driver', function(){
-        $('.drivers__inner').append('<div class="files__item files__item-nodrivers"><div class="files__name"><span>*</span>Водительское удостоверение<a class="remove__driver" href="javascript:;">(удалить)</a></div><div class="files__buttons"><div class="files__btn"><input class="files__input files__input-nodrivers" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Лицевая</div><span>файл не выбран</span></div><div class="files__btn"><input class="files__input files__input-nodrivers" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Оборотная</div><span>файл не выбран</span></div></div></div>')
+        $('.drivers__inner').append('<div class="files__item files__item-nodrivers"><div class="files__name"><span>*</span>Водительское удостоверение<a class="remove__driver" href="javascript:;">(удалить)</a></div><div class="files__buttons"><div class="files__btn"><input class="files__input files__input-nodrivers _req" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Лицевая</div><span>файл не выбран</span></div><div class="files__btn"><input class="files__input files__input-nodrivers _req" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Оборотная</div><span>файл не выбран</span></div></div></div>')
     });
-    $('body').on('click', '.added__man', function(){
-        $('.drivers__inner').append('<div class="files__item files__item-nodrivers"><div class="files__name"><span>*</span>Паспорт страхуемого лица<a class="remove__driver" href="javascript:;">(удалить)</a></div><div class="files__buttons"><div class="files__btn"><input class="files__input files__input-nodrivers" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Главная</div><span>файл не выбран</span></div><div class="files__btn"><input class="files__input files__input-nodrivers" name="image" type="file" accept=".jpg, .png, .gif, .jpeg, .pdf" required><div class="files__choose">Прописка</div><span>файл не выбран</span></div></div></div>')
-    });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//показ/скрытие дополнительной информации к чекбоксам, по клику на вопросительный знак
+
     $('.hint-link__kasko').on('click', function(){
         $('.hint-link__descr-kasko').fadeToggle();
     });
@@ -119,20 +140,11 @@ $(function(){
             $('.hint-link__descr-life').fadeOut();
         }
     });
-    $(".fancybox-form").on('submit', function() {
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: th.serialize()
-		}).done(function() {
-			alert("Ваша заявка принята. Наш специалист свяжется с Вами в течении 15 минут.");
-			setTimeout(function() {
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-    });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//код, заставляющий перепрыгивать курсор в начало для всех ипутов с типом "tel"
+
     $.fn.setCursorPosition = function(pos) {
         if ($(this).get(0).setSelectionRange) {
           $(this).get(0).setSelectionRange(pos, pos);
@@ -147,9 +159,37 @@ $(function(){
       $('input[type="tel"]').on('click', function(){
         $(this).setCursorPosition(3);
       });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//маска для инпутов с типом "tel"
+
     $("input[type=tel]").mask("+7 (999) 999-9999");
-});
-$(function() {
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//js код для формы заказа обратного звонка. Код из видео на канале Вадима
+
+    $(".fancybox-form").on('submit', function() {
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: th.serialize()
+		}).done(function() {
+			alert("Ваша заявка принята. Наш специалист свяжется с Вами в течении 15 минут.");
+			setTimeout(function() {
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+    });
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//js код для основной формы отправки со всеми файлами
+
     document.getElementById('form').addEventListener('submit', function(evt){
       var http = new XMLHttpRequest(), f = this;
       var th = $(this);

@@ -5,7 +5,8 @@ let gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssmin'),
+    babel = require('gulp-babel');
 
 gulp.task('sass', function () {
     return gulp.src('app/scss/**/*.scss')
@@ -18,6 +19,9 @@ gulp.task('sass', function () {
 
 gulp.task('main', function () {
     return gulp.src('app/js/main.js')
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('app/js'))
